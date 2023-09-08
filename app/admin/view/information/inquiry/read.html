@@ -1,0 +1,61 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+            <legend>基本信息</legend>
+        </fieldset>
+        <div class="layui-form-item">
+            <label class="layui-form-label">项目名称</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" readonly=""  value="{$row['project']['title']}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">询价单名称</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" readonly=""  value="{$row['title']}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系人名称</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" readonly=""  value="{$row['contacts']['name']}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系人手机号</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" readonly=""  value="{$row['contacts']['phone']}">
+            </div>
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+            <legend>产品信息</legend>
+        </fieldset>
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>产品名称</th>
+                    <th>规格型号</th>
+                    <th>单位</th>
+                    <th>数量</th>
+                </tr> 
+            </thead>
+            <tbody>
+                {foreach $row['inquiryProduct'] as $vo}
+                    <tr>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.standards}</td>
+                        <td>{$vo.unit}</td>
+                        <td>{$vo.num}</td>
+                    </tr>
+                {/foreach}
+            </tbody>
+        </table>
+
+    </form>
+</div>
